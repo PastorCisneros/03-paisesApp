@@ -12,7 +12,7 @@ import { switchMap, tap } from 'rxjs/operators';
 })
 export class VerPaisComponent implements OnInit {
 
-  pais!:Country
+  pais!:Country;
 
   constructor(
     private activateRoute : ActivatedRoute,
@@ -21,26 +21,25 @@ export class VerPaisComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // this.activateRoute.params
-    //   .subscribe(({id})=>{
-
-    //   console.log(id);
-
-    //   this.paisService.getPaisPorAlpha(id)
-    //     .subscribe(pais=>{
-    //       this.pais=pais;
-    //       console.log(pais);
-    //     })
-    // })
-
     this.activateRoute.params
-      .pipe(
-        switchMap( ({ id }) => this.paisService.getPaisPorAlpha( id )  ),
-        tap( console.log )
-      )
-      .subscribe( pais => this.pais = pais );
+      .subscribe(({id})=>{
 
+      console.log(id);
+
+      this.paisService.getPaisPorAlpha(id)
+        .subscribe(pais=>{
+          this.pais=pais[0];
+          console.log(this.pais);
+        })
+    })
+
+  //   this.activateRoute.params
+  //     .pipe(
+  //       switchMap( ({ id }) => this.paisService.getPaisPorAlpha( id )  ),
+  //       tap( console.log )
+  //     )
+  //     .subscribe( pais => this.pais = pais );
+
+  // }
   }
-  }
-
-
+}

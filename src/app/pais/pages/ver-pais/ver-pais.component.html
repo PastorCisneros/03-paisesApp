@@ -8,7 +8,7 @@
 
     <div class="row">
         <div class="col-12">
-            <h1>País: <small>{{ pais.name.comman }}</small></h1>
+            <h1>País: <small>{{ pais.name.common }}</small></h1>
         </div>
     </div>
 
@@ -16,7 +16,7 @@
 
         <div class="col-4">
             <h3>Bandera</h3>
-            <img [src]="pais.flag" class="img-thumbnail" />
+            <img [src]="pais.flags.png" class="img-thumbnail" />
         </div>
 
         <div class="col">
@@ -26,10 +26,10 @@
                     <strong>Población</strong> {{ pais.population | number }}
                 </li>
                 <li class="list-group-item">
-                    <strong>Código numérico</strong> {{ pais.numericCode }}
+                    <strong>Código numérico</strong> {{ pais.capital }}
                 </li>
                 <li class="list-group-item">
-                    <strong>Código alpha3</strong> {{ pais.alpha3Code }}
+                    <strong>Código alpha3</strong> {{ pais.region }}
                 </li>
             </ul>
         </div>
@@ -41,24 +41,16 @@
     <div class="row">
         <div class="col">
 
-            <span class="badge bg-primary mr-1">{{ pais.translations.de }}</span>
-            <span class="badge bg-primary mr-1">{{ pais.translations.es }}</span>
-            <span class="badge bg-primary mr-1">{{ pais.translations.fr }}</span>
-            <span class="badge bg-primary mr-1">{{ pais.translations.ja }}</span>
-            <span class="badge bg-primary mr-1">{{ pais.translations.it }}</span>
-            <span class="badge bg-primary mr-1">{{ pais.translations.br }}</span>
-            <span class="badge bg-primary mr-1">{{ pais.translations.pt }}</span>
-            <span class="badge bg-primary mr-1">{{ pais.translations.nl }}</span>
-            <span class="badge bg-primary mr-1">{{ pais.translations.hr }}</span>
-            <span class="badge bg-primary mr-1">{{ pais.translations.fa }}</span>
+            <span class="badge bg-primary mr-1">{{ pais.demonyms.eng.f }}</span>
+
 
         </div>
     </div>
 
 
-    <!-- <pre class="mt-5">
+    <pre class="mt-5">
         {{ pais | json }}
-    </pre> -->
+    </pre>
 
 
 </ng-template>
