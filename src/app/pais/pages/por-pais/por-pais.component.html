@@ -6,6 +6,12 @@
     </div>
 </div>
 
+<ul class="list-group">
+    <li *ngFor="let pais of paisesSugeridos" class="list-group-item list-group-item-action">
+        {{pais.name.common}}
+    </li>
+</ul>
+
 <hr>
 
 <div *ngIf="hayError" class="alert alert-danger">
